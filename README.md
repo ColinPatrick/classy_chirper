@@ -1,29 +1,66 @@
-Chirper (Front End)
-In this lab, you will be building your first front-end application using ReactJS.
+Classy Chirper
+The goal of this lab is to convert, re-write, or from scratch create the same Chirper lab from the beginning of the React module. Except the design constraint is that it must be written using only Class-based Components.
 
-It's called Chirper, a platform where you can post short messages on the internet for all the world -- even the Presidents of the United States -- to see!
-
-Prerequisites
-Watch the "Introduction to React" videos available to you at Covalence. Rewatch them where necessary.
-Install Create React App on your local machine.
-Use Create React App to create your first React application.
-Install the React Developer Tools in Chrome.
-Import Bootstrap 4 into your index.html file.
-Instructions
-Your objective should be to create a "timeline" of Chirps -- short messages that you post on the Chirper platform.
-
-Your timeline should load with at least three chirps, and your users need the capability of posting new Chirps, which will be displayed back to them in the timeline once they are posted.
-
-Design constraint: You can only invoke ReactDOM.render() one time in your entire application.
+ 
 
 Getting Started
-Familiarize yourself with your new React application, but quickly move into separating components into their own directory.
-Remember: one component per file!
+Create a new project with Create React App.
+Delete the src and public directory and all of its contents.
+Create a new public directory and a new index.html file inside of public.
+Use the ! emmet shortcut to generate a fresh html document in the index.html file. Place <div id="root"></div> in the <body> of the html document you created. (like we did in earlier videos!)
+Create a new src directory and a components directory inside of src.
+Create an App.jsx and a index.js file inside of src.
+Write the basic "entry point" code for the index.js file, avoid copy/paste so you can practice writing it yourself!
+// inside of src/index.js
+import React from 'react';
+import ReactDOM from 'react-dom';
+import App from './App';
 
-Convert your .js files into .jsx files.
+ReactDOM.render(<App />, document.getElementById('root'));
+Write a simple function component that returns some JSX for your App.jsx file.
+// inside of /src/App.jsx
+import React from 'react';
 
-Use only Bootstrap classes. You should not need any custom CSS in this project.
+class App extends React.Component {
+    render() {
+        return (
+            <div>
+                <h1>Hello from App Class Component!</h1>
+            </div>
+        );
+    }
+}
 
-Think about the design of your project. How will you compose (or extract) components to achieve the desired result?
+export default App;
+ 
 
-Happy Hacking!
+You should now have a project structure that resembles the following:
+
+node_modules/
+public/
+|- index.html
+src/
+|- components/
+|- App.jsx
+|- index.js
+.gitignore
+package-lock.json
+package.json
+README.md
+ 
+
+Instructions (same as before)
+Your objective should be to create a "timeline" of Chirps -- short messages that you post on the Chirper platform.
+
+Your timeline should load with at least three chirps.
+
+Code a form with at least two inputs where users can submit new chirps from.
+
+When a new chirp is submitted it should be shown back to the user in the timeline.
+
+ 
+
+Hints
+The walkthrough and lecture's reference material will serve as a great guide to completing this lab.
+Remember that a lot of your code will start with this. inside of a class.
+Remember to bind your this keyword by using arrow functions in your event handlers.
